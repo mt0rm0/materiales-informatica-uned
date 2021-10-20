@@ -32,7 +32,7 @@ Los cinco componentes son el **mensaje**, el **emisor**, el **receptor**, el **m
 
 ### Q1-2. ¿Cuáles son los tres criterios necesarios para que una red sea eficiente y efectiva?
 
-
+Los tres criterios son **rendimiento**, **fiabilidad** y **seguridad**. (p.7-8)
   
 ---  
 
@@ -44,7 +44,7 @@ Algunas ventajas de conexión multipunto frente a conexión punto a punto pueden
   
 ### Q1-4. ¿Cuáles son los dos tipos de configuración de línea?
 
-
+Los dos tipos son **punto a punto** y **multipunto**. (p.8)
 
   ---
   
@@ -57,7 +57,7 @@ La topología en **bus** corresponde a una conexión **multipunto**. (p.9-12)
     
 ### Q1-6. ¿Cuáles son las diferencias entre los modos de transmisión semidúplex y dúplex?
 
-
+En transmisión **semidúplex** solo una entidad puede transmitir a la vez; en una transmisión **dúplex** las dos entidades pueden transmitir a la vez.
   
   ---
 
@@ -79,7 +79,10 @@ Estas topologias también presentan algunas desventajas:
   
 ### Q1-8. Para una red con n dispositivos, ¿cuál es el número de enlaces de cable necesarios para una malla, un anillo, un bus y una topología en estrella?
 
-
+- **Malla**: n(n-1)/2
+- **Anillo**: n
+- **Bus**: n+1
+- **Estrella**: n
   
   ---
 
@@ -91,7 +94,7 @@ Los factores generales son **tamaño**, **distancias cubiertas por la red**, **e
   
 ### Q1-10. ¿Qué es un internet? ¿Qué es Internet?
 
-
+Un internet es una interconexión de redes. Internet es el nombre de una red global específica.
   
   ---
 
@@ -115,7 +118,7 @@ Cada LAN se conecta a las (n-1) LANs restantes. Esto representa n(n-1) conexione
   
 ### Q1-14. Cuando usamos los teléfonos locales para hablar con un amigo, ¿estamos usando una red de conmutación de circuitos o una red de conmutación de paquetes?
 
-
+Una red de **conmutación de circuitos**. Se trata de una conexión dedicada, donde la información se transmite directamente sin cola o retraso.(p.15-17)
 
   ---
   
@@ -127,7 +130,7 @@ La compañia telefónica  actua como un **ISP (Proveedor de Servicios de Interne
   
 ### Q1-16. ¿Cuál es el primer principio que discutimos en este capítulo para la arquitectura por niveles de protocolo que debe seguirse para que la comunicación sea bidireccional?
 
-
+El primer principio dice que para tener comunicación bidireccional, cada nivel debe ser capaz de realizar dos tareas opuestas, una en cada sentido. Esto en realidad está explicado en el siguiente tema.(p.34)
 
   ---
   
@@ -139,7 +142,7 @@ Un **borrador de Internet** es un **documento de trabajo sin estatus oficial** y
   
 ### Q1-18. Explique la diferencia entre una RFC requerida y una RFC recomendada.
 
-
+La **RFC requerida** debe ser implementada por todos los sistemas de Internet, mientras que una **RFC recomendada** no es requerida pero su implementación, aunque por su utilidad se recomiende. 
 
   ---
   
@@ -150,3 +153,94 @@ El **IRTF** (Grupo de Trabajo de Investigación de Internet) se centra en temas 
 
   
 </details>
+
+<details>
+<summary>Problemas</summary>
+<br>
+
+### P1-1. ¿Cuál es el máximo número de carácteres o símbolos que se pueden representar con Unicode?
+  
+Con Unicode se pueden representar hasta **1,111,998** carácteres diferentes: 17 planos × 65,536 carácteres por plano - 2048 subrogados - 66 no-carácteres
+  
+---
+
+### P1-2. Una imagen a color usa 16 bits para representar un pixel. ¿Cuál es el número máximo de colores diferentes que se pueden representar?
+
+  Con 16 bits se pueden representar **2<sup>16</sup>=65536**  colores diferentes.
+  
+---  
+
+### P1-3. Supón que seis dispositivos están organizados en una topología de malla. ¿Cuántos cables se necesitan? ¿Cuántos puertos son necesarios para cada dispositivo?
+
+  - **Cables**: n<sub>cables</sub> = 6(6-1)/2 = **15**
+  - **Puertos**: n<sub>puertos</sub> = 6-1 = **5**
+
+---
+  
+### P1-4. Para cada una de las siguientes redes, comenta las consecuencias si una conexión falla.
+### a. Cinco dispositivos conectados en malla
+  
+  Si la conexión falla, el resto de conexiones seguirán funcionando.
+  
+### b. Cinco dispositivos conectados en estrella (sin contar el hub)
+  
+  El resto de dispositivos seguirá siendo capaz de enviar datos a traves del hub, pero no se puede conectar con el dispositivo  cuya conexión al hub falló.
+  
+### c. Cinco dispositivos conectados en bus
+  
+  Si el fallo es en un cable de conexión, ese dispositivo queda fuera de alcance. Si el fallo es en el cable principal, toda la red queda inutilizada.
+  
+### d. Cinco dispositivos conectados en anillo.
+  
+  Un fallo en una conexión deja inhabilitada toda la linea, a menos que que sea un anillo dual, o se haya implementado algún mecanismo de conmutación para puentear la conexión fallida.(p.9-12)
+
+  ---
+  
+### P1-5. Tenemos dos ordenadores conectados en casa por un concentrador (Ethernet hub). ¿Se trata de una LAN o una WAN?Razona tu respuesta..
+
+Es una Red de Area Local (LAN), pues es de tamaño limitado, interconecta (dos) Hosts y es de propiedad privada.(p.14)
+
+  ---
+    
+### P1-6. En una topología de anillo como la de la figura 1.7, ¿qué ocurre si se desconecta una de las estaciones?
+
+Teóricamente, en una topología de anillo, desconectar una estación implica interrumpir la red. Sin embargo, hoy en día muchas redes en anillo usan un mecanismo para puentear la estación para que la red pueda continuar operando.
+  
+  ---
+
+### P1-7. En una topología en bus como la de la figura 1.6, ¿qué ocurre si se desconecta una de las estaciones?
+
+En una topología de bus, ninguna estación está en el camino de la señal, por lo que desconectar una estación no tiene ningún efecto sobre la red.
+
+  ---
+  
+### P1-8. El rendimiento es inversamente proporcional a la latencia. Cuando usamos Internet, ¿cuál de las siguientes aplicaciones son más sensibles a la latencia?
+### a. Enviar un correo electrónico
+  
+  El correo electrónico no es una aplicación interactiva. Aunque es enviado inmediatamente, no se requiere que sea abierto inmediatamente y puede llegar esperar en el servidor un periodo prolongado de tiempo. Es por lo tanto, casi nada sensible a latencia.
+  
+### b. Copiar un fichero
+  
+  No se espera de un fichero que sea copiado inmediatamente, por lo que no es muy sensible a latencia.
+  
+### c. Navegar por internet
+
+  Para una navegación fluida se espera una respuesta rápida de las páginas web que estamos visitando, por lo que es muy sensible a la latencia.
+  
+  ---
+
+### P1-9. Cuando una persona realiza una llamada de teléfono local a otra persona, ¿es una conexión punto a punto o multipunto? Razona tu respuesta.
+
+  Se trata de una comunicación exclusiva entre la persona que llama y el receptor, por lo que se establece Una linea dedicada entre ellos. Esto es una conexión **punto a punto** 
+  
+  ---
+  
+### P1-10. Compara la red telefónica e Internet. ¿En qué se parecen? ¿En qué se diferencian?
+
+  Ambas son similares en el hecho de que están construidas como interconexiones de muchas redes menores.
+  
+  La red telefónica fué designada originalmente para transmitir voz, mientras que Internet fué concebida originalmente para transmitir datos. Esto implica además, que la red telefónica es en su mayor parte una red de conmutación de circuitos, mientras que Internet es principalmente una red de conmutación de paquetes.
+ 
+</details>
+
+[Volver al índice](#índice)
