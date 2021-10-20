@@ -102,7 +102,9 @@ Un protocolo define qué es comunicado, cuándo y de qué manera. Esto **proporc
   
 ### Q1-12. En una LAN con un interruptor de capa de enlace (Figura 1.8b ), el Host 1 quiere enviar un mensaje al Host 3. Dado que la comunicación es a través del interruptor de capa de enlace, ¿el interruptor debe tener una dirección? Desarróllelo.
 
+Un interruptor de capa de enlace es un conmutador (switch). Un dispositivo de este tipo no requiere tener asignada ninguna dirección ni física (MAC) ni lógica (IP). Lo que si tiene que hacer es consultar las direcciones físicas (MAC) de las tramas que le llegan para poder encaminarlas por el puerto de salida correspondiente tras consultar la tabla que vinvula direcciones y puertos.
 
+Si es un conmutador de gama alta (gestionable) puede tener dirección MAC asignada para poder establecer conexiones con él desde una terminal de control pero sería para tareas de configuración del equipo.
   
   ---
 
