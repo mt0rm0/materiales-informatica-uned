@@ -3,8 +3,6 @@
 # Soluciones a los problemas del libro de texto
 
 ## Índice
-<details>
-<summary>Mostrar</summary>
 
 1. [Tema 1](#tema-1)
 2. [Tema 2](#tema-2)
@@ -16,8 +14,6 @@
 8. [Tema 8](#tema-8)
 9. [Tema 9](#tema-9)
 10. [Tema 10](#tema-10)
-</details>  
-
 
 ## Tema 1
 <details>
