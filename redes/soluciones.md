@@ -17,7 +17,7 @@
 
 ## Tema 1
 <details>
-<summary>Preguntas</summary>
+<summary>Cuestiones</summary>
 <br>
 
 ### Q1-1. Identifique los cinco componentes de un sistema de comunicación de datos.
@@ -177,19 +177,15 @@ Con Unicode se pueden representar hasta **1,111,998** carácteres diferentes: 17
   
 ### P1-4. Para cada una de las siguientes redes, comenta las consecuencias si una conexión falla.
 ### a. Cinco dispositivos conectados en malla
-  
   Si la conexión falla, el resto de conexiones seguirán funcionando.
   
 ### b. Cinco dispositivos conectados en estrella (sin contar el hub)
-  
   El resto de dispositivos seguirá siendo capaz de enviar datos a traves del hub, pero no se puede conectar con el dispositivo  cuya conexión al hub falló.
   
 ### c. Cinco dispositivos conectados en bus
-  
   Si el fallo es en un cable de conexión, ese dispositivo queda fuera de alcance. Si el fallo es en el cable principal, toda la red queda inutilizada.
   
 ### d. Cinco dispositivos conectados en anillo.
-  
   Un fallo en una conexión deja inhabilitada toda la linea, a menos que que sea un anillo dual, o se haya implementado algún mecanismo de conmutación para puentear la conexión fallida.(p.9-12)
 
   ---
@@ -214,15 +210,12 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   
 ### P1-8. El rendimiento es inversamente proporcional a la latencia. Cuando usamos Internet, ¿cuál de las siguientes aplicaciones son más sensibles a la latencia?
 ### a. Enviar un correo electrónico
-  
   El correo electrónico no es una aplicación interactiva. Aunque es enviado inmediatamente, no se requiere que sea abierto inmediatamente y puede llegar esperar en el servidor un periodo prolongado de tiempo. Es por lo tanto, casi nada sensible a latencia.
   
 ### b. Copiar un fichero
-  
   No se espera de un fichero que sea copiado inmediatamente, por lo que no es muy sensible a latencia.
   
 ### c. Navegar por internet
-
   Para una navegación fluida se espera una respuesta rápida de las páginas web que estamos visitando, por lo que es muy sensible a la latencia.
   
   ---
@@ -239,6 +232,177 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   
   La red telefónica fué designada originalmente para transmitir voz, mientras que Internet fué concebida originalmente para transmitir datos. Esto implica además, que la red telefónica es en su mayor parte una red de conmutación de circuitos, mientras que Internet es principalmente una red de conmutación de paquetes.
  
+</details>
+
+[Volver al índice](#índice)
+
+## Tema 2
+<details>
+<summary>Preguntas</summary>
+<br>
+
+### Q2-1. Según se describe en este capítulo, ¿qué principio básico ha de seguirse respecto a protocolos de arquitectura por niveles para que la comunicación sea bidireccional?
+  
+  
+  
+  ---
+  
+### Q2-2. ¿Qué niveles del conjunto de protocolos TCP/IP están involucrados en un conmutador de nivel de enlace?
+  
+  
+  
+  ---
+  
+### Q2-3. Un enrutador conecta tres enlaces (redes). ¿Con cuántos de cada uno de los siguientes niveles puede estar involucrado el enrutador?
+### a. Nivel físico
+
+  
+### b. Nivel de enlace de datos
+
+  
+### c. Nivel de red
+
+  
+  ---
+
+### Q2-4. En el conjunto de protocolos TCP/IP, ¿cuáles son los objetos idénticos en el sitio del emisor y del receptor cuando pensamos en la conexión lógica en el nivel de aplicación?
+
+  
+  
+  ---
+  
+### Q2-5. Un host se comunica con otro host usando el conjunto de protocolos TCP/IP. ¿Cuál es la unidad de datos que se envía o recibe en cada uno de los siguientes niveles?
+### a. Nivel de aplicación
+### b. Nivel de red
+### c. Nivel de enlace de datos
+
+  ---
+  
+### Q2-6. ¿Cuál de las siguientes unidades de datos está encapsulada en una trama?
+### a. Un datagrama de usuario
+### b. Un datagrama
+### c. Urt segmento
+
+  ---
+  
+### Q2-7. ¿Cuál de las siguientes unidades de datos se desencapsula a partir de un datagrama de usuario?
+### a. Un datagrama
+### b. Un segmento
+### c. Un mensaje
+
+  ---
+  
+### Q2-8. ¿Cuál de las siguientes unidades de datos tiene un mensaje del nivel de aplicación más el encabezado del nivel 4?
+### a. Una trama
+### b. Un datagrama de usuario
+### c. Un bit
+
+  ---
+  
+### Q2-9. Enumere algunos protocolos de nivel de aplicación que se mencionan en este capítulo.
+
+  ---
+  
+### Q2-10. Si un número de puerto es de 16 bits (2 bytes), ¿cuál es el tamaño mínimo de la cabecera en el nivel de transporte del conjunto de protocolos TCP/IP?
+
+  ---
+  
+### Q2-11. ¿Qué tipos de direcciones (identificadores) se utilizan en cada uno de los siguientes niveles?
+### a. Nivel de aplicación
+### b. Nivel de red
+### c. Nivel de enlace de datos
+
+  ---
+  
+### Q2-12. Cuando decimos que la capa de transporte multiplexa y demultiplexa los mensajes de la capa de aplicación, ¿queremos decir q,ue un protocolo de nivel de transporte puede combinar varios mensajes del nivel de aplicación en un paquete? Explíquelo.
+  
+  ---
+  
+### Q2-13. ¿Puede explicar por qué no mencionamos los servicios de multiplexación/demultiplexación para el nivel de aplicación?
+  
+  ---
+  
+### Q2-14. Supongamos que queremos conectar dos hosts aislados para que cada uno se comunique con el otro. ¿Necesitamos un conmutador de enlace entre ambos? Desarrollar.
+  
+  ---
+  
+### Q2-15. Si hay un solo camino entre el host de origen y el de destino, ¿necesitamos un enrutador entre los dos hosts?
+
+    
+</details>
+
+<details>
+<summary>Problemas</summary>
+<br>
+  
+### P2-l. Responda a las siguientes preguntas sobre la Figura 2.2 cuando la comunicación sea de María a Ana:
+### a. ¿Cuál es el servicio proporcionado por el nivel 1 al nivel 2 en el sitio de María?
+### b. ¿Cuál es el servicio proporcionado por el nivel 1 al nivel 2 en el sitio de Ana?
+  
+  ---
+  
+### P2-2. Responda a las siguientes preguntas sobre la Figura 2.2 cuando la comunicación es de María a Ana:
+### a. ¿Cuál es el servicio proporcionado por el nivel 2 al nivel 3 en el sitio de María?
+### b. ¿Cuál es el servicio proporcionado por el nivel 2 al nivel 3 en el sitio de Ana?
+  
+  ---
+  
+### P2-3. Supongamos que el número de hosts conectados a Internet en el año 2010 es de quinientos mil1ones. Si el número de hosts aumenta solo un 20 por ciento por año, ¿cuál es el número de hosts en el año 2020?
+  
+  ---
+  
+### P2-4. Supongamos que un sistema utiliza cinco niveles de protocolo. Si el programa de aplicación crea un mensaje de 100 bytes y cada capa (incluyendo la quinta y la primera) añade un encabezado de 10 bytes a la unidad de datos, ¿cuál es la eficiencia (la relación entre los bytes de la capa de aplicación y el número de bytes transmitidos) del sistema?
+  
+  ---
+  
+### P2-5. Supongamos que hemos creado una Internet de conmutación de paquetes. Usando el conjunto de protocolos TCP/IP, necesitamos transferir un archivo enorme. ¿Cuál es la ventaja y la desventaja de enviar paquetes grandes?
+  
+  ---
+  
+### P2-6. Relacione los siguientes elementos con uno o más niveles del conjunto de protocolos TCP/IP:
+### a. Determinación de ruta
+### b. Conexión a los medios de transmisión
+### c. Proporcionar servicios al usuario final
+  
+  ---
+  
+### P2-7. Relacione los siguientes elementos con uno o más niveles del conjunto de protocolos TCP/IP:
+### a. Crear datagramas de usuario
+### b. Responsabilidad de manipular el envío de tramas entre nodos adyacentes
+### c. Transformar bits en señales electromagnéticas
+  
+  ---
+  
+### P2-8. En la Figura 2.10, cuando el protocolo IP desencapsula el paquete del nivel de transporte, ¿cómo sabe a qué protocolo de nivel superior ha de entregarse (UDP o TCP)?
+  
+ ---
+  
+### P2-9. Supongamos que una Internet privada usa tres protocolos distintos en el nivel de enlace de datos (L1, L2 y L3). Vuelva a dibujar la Figura 2.10 siguiendo esta premisa. ¿Podemos decir que en el nivel de base de datos, tenemos demultiplexación en el nodo fuente y multiplexación en el nodo del destinatario?
+  
+  ---
+  
+### P2-10. Supongamos que una Internet privada requiere que los mensajes del nivel de aplicación estén cifrados y descifrados por motivos de seguridad. Si necesitamos añadir alguna información sobre el proceso de cifrado/descifrado (como los algoritmos usados en el proceso), ¿significa que estamos añadiendo un nivel al conjunto de protocolos TCP/IP? Rediseñe las capas TCP/IP (Figura 2.4 parte b) si lo cree así.
+  
+  ---
+  
+### P2-11. La arquitectura modular de protocolos se puede encontrar en muchos aspectos de nuestras vidas, como en los viajes aéreos. Imagine que hace un viaje de ida y vuelta para pasar un tiempo de vacaciones en un complejo turístico. Tiene que pasar por algunos procesos en el aeropuerto de su ciudad antes de volar. También hay que pasar por algunos procesos al llegar al aeropuerto del destino. Muestra los niveles de protocolo para el viaje de ida y vuelta utilizando algunos niveles como la facturación y recogida de equipajes, embarque y desembarque, despegue y aterrizaje.
+  
+  ---
+  
+### P2-12. La presentación de datos es cada vez más importante en la Internet de hoy en día. Algunas personas sostienen que el conjunto de protocolos TCP/IP necesita añadir un nuevo nivel para ocuparse de la presentación de los datos. Si se añade este nuevo nivel en el futuro, ¿dónde debería estar su posición en el conjunto? Redibuje la Figura 2.4 para incluir dicho nivel.
+  
+  ---
+  
+### P2-13. En una Internet, cambiamos la tecnología LAN a una nueva. ¿Qué niveles del conjunto de protocolos TCP/IP deben cambiarse?
+  
+  ---
+  
+### P2-l4. Supongamos que se ha escrito un protocolo de nivel de aplicación para utilizar los servicios de UDP. ¿Puede el protocolo de nivel de aplicación utilizar los servicios de TCP sin cambios?
+  
+  ---
+  
+### P2-15. Usando la Internet en la Figura 1.11 (Capítulo 1), muestre los niveles del conjunto de protocolos TCP/IP y el flujo de datos cuando dos hosts, uno en la costa oeste y el otro en la costa este, intercambian mensajes.
+   
 </details>
 
 [Volver al índice](#índice)
