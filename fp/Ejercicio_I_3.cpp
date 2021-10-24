@@ -18,7 +18,6 @@ int main() {
 
   /* Lee el valor para el lado del rombo */ {
     printf("Lado del rombo?");
-    fflush(stdin);
     scanf(" %d", &lado);
   }
 
