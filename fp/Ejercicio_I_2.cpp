@@ -35,8 +35,8 @@ int main() {
     for (int i=0; i<TotalNumeros; i++) {
       do {
         printf("%s numero? ", cadenas[i]);
-        fflush(stdin);
         scanf("%d", &numero[i]);
+        fflush(stdin);
       } while ((numero[i] < Minimo) || (numero[i] > Maximo));
     }
   }
