@@ -20,7 +20,6 @@ int main() {
   /* Leer el número */ {
     do {
       printf("Numero? ");
-      fflush(stdin);
       scanf("%d", &numero);
     } while ((numero < minimo) || (numero > maximo));
   }
