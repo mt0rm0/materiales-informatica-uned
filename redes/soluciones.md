@@ -243,7 +243,7 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
 
 ### Q2-1. Según se describe en este capítulo, ¿qué principio básico ha de seguirse respecto a protocolos de arquitectura por niveles para que la comunicación sea bidireccional?
   
-  
+  Para que la comunicación sea bidimensional, cada capa o nivel debe ser capaz de proporcionar dos tareas opuestas, una en cada dirección.
   
   ---
   
@@ -255,13 +255,13 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   
 ### Q2-3. Un enrutador conecta tres enlaces (redes). ¿Con cuántos de cada uno de los siguientes niveles puede estar involucrado el enrutador?
 ### a. Nivel físico
-
+Tres niveles
   
 ### b. Nivel de enlace de datos
-
+Tres niveles
   
 ### c. Nivel de red
-
+Un nivel (p.41)
   
   ---
 
@@ -273,23 +273,39 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   
 ### Q2-5. Un host se comunica con otro host usando el conjunto de protocolos TCP/IP. ¿Cuál es la unidad de datos que se envía o recibe en cada uno de los siguientes niveles?
 ### a. Nivel de aplicación
+  
+  Mensaje
+  
 ### b. Nivel de red
+  
+  Datagrama
+  
 ### c. Nivel de enlace de datos
+  
+  Trama (frame) (p.41-42)
 
   ---
   
 ### Q2-6. ¿Cuál de las siguientes unidades de datos está encapsulada en una trama?
 ### a. Un datagrama de usuario
 ### b. Un datagrama
-### c. Urt segmento
+### c. Un segmento
 
   ---
   
 ### Q2-7. ¿Cuál de las siguientes unidades de datos se desencapsula a partir de un datagrama de usuario?
 ### a. Un datagrama
+  
+  No, un datagrama es la unidad de datos del nivel de red y se desencapsula de una trama (nivel de enlace de datos).
+  
 ### b. Un segmento
+  
+  No, un segmento es la unidad de datos del nivel de transporte cuando se usa el protocolo TCP y se desencapsula de un datagrama (nivel de red).
+  
 ### c. Un mensaje
 
+  Correcto, un mensaje es la unidad de datos del nivel de aplicación y se desencapsula de un datagrama de usuario (nivel de transporte con protocolo UDP). (p.41-42)
+  
   ---
   
 ### Q2-8. ¿Cuál de las siguientes unidades de datos tiene un mensaje del nivel de aplicación más el encabezado del nivel 4?
@@ -300,6 +316,13 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   ---
   
 ### Q2-9. Enumere algunos protocolos de nivel de aplicación que se mencionan en este capítulo.
+  
+- HTTP, Protocolo de Transferencia de Hipertexto
+- SMTP, Protocolo Simple de Transferencia de Correo
+- FTP, Protocolo de Transferencia de Archivos
+- TELNET, Red de Terminales
+- SSH, Secure Shell
+- SNMP, Protocolo Simple de Gestión de Redes
 
   ---
   
@@ -309,8 +332,16 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   
 ### Q2-11. ¿Qué tipos de direcciones (identificadores) se utilizan en cada uno de los siguientes niveles?
 ### a. Nivel de aplicación
+  
+En el nivel de aplicación se usan normalmente **nombres** para definir el nombre del ordenador de destino o el nombre del fichero al que queremos acceder. Un ejemplo es *alguien@algunsitio.com*
+  
 ### b. Nivel de red
+  
+  En el nivel de red, se usan dos **direcciones lógicas** (fuente y destino) para definir los ordenadores fuente y destino. Estas direcciones son únicas universalmente.
+  
 ### c. Nivel de enlace de datos
+  
+  En el nivel de enlace de datos, se usan dos **direcciones de nivel de enlace** para definir las conexiones fuente y destino del enlace.
 
   ---
   
@@ -320,6 +351,8 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   
 ### Q2-13. ¿Puede explicar por qué no mencionamos los servicios de multiplexación/demultiplexación para el nivel de aplicación?
   
+  El nivel de aplicación es el nivel más alto del conjunto de protocolos. Esto significa que no proporciona servicios a ninguna otra capa, por lo que hablar de multiplexación/demultiplexación en esta capa no tiene sentido.
+  
   ---
   
 ### Q2-14. Supongamos que queremos conectar dos hosts aislados para que cada uno se comunique con el otro. ¿Necesitamos un conmutador de enlace entre ambos? Desarrollar.
@@ -327,6 +360,8 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   ---
   
 ### Q2-15. Si hay un solo camino entre el host de origen y el de destino, ¿necesitamos un enrutador entre los dos hosts?
+  
+  **No**. Un enrutador es necesario cuando hay más de un camino entre dos hosts. En ese caso, el enrutador es responsable de elegir el camino óptimo en cada momento.
 
     
 </details>
