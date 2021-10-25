@@ -238,7 +238,7 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
 
 ## Tema 2
 <details>
-<summary>Preguntas</summary>
+<summary>Cuestiones</summary>
 <br>
 
 ### Q2-1. Según se describe en este capítulo, ¿qué principio básico ha de seguirse respecto a protocolos de arquitectura por niveles para que la comunicación sea bidireccional?
@@ -372,7 +372,12 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   
 ### P2-l. Responda a las siguientes preguntas sobre la Figura 2.2 cuando la comunicación sea de María a Ana:
 ### a. ¿Cuál es el servicio proporcionado por el nivel 1 al nivel 2 en el sitio de María?
+  
+  El nivel 1 coge el texto cifrado del nivel 2, lo mete en un sobre (lo encapsula) y lo envía.
+  
 ### b. ¿Cuál es el servicio proporcionado por el nivel 1 al nivel 2 en el sitio de Ana?
+  
+  El nivel 1 recibe el correo, saca mensaje cifrado del sobre (lo desencapsula) y lo pasa al nivel 2.
   
   ---
   
@@ -384,6 +389,13 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   
 ### P2-3. Supongamos que el número de hosts conectados a Internet en el año 2010 es de quinientos mil1ones. Si el número de hosts aumenta solo un 20 por ciento por año, ¿cuál es el número de hosts en el año 2020?
   
+  
+  Sea H_n el número de hosts conectados a Internet en el año n. Si en 2010 había 500 millones de hosts, con un crecimiento anual del 20% tenemos:
+  
+  H<sub>2020</sub> = 5&sdot;10<sup>8</sup>&sdot;1.20<sup>10</sup> &#8776; 3 &sdot;10<sup>9</sup>
+  
+  Aproximadamente 3.000 millones.
+  
   ---
   
 ### P2-4. Supongamos que un sistema utiliza cinco niveles de protocolo. Si el programa de aplicación crea un mensaje de 100 bytes y cada capa (incluyendo la quinta y la primera) añade un encabezado de 10 bytes a la unidad de datos, ¿cuál es la eficiencia (la relación entre los bytes de la capa de aplicación y el número de bytes transmitidos) del sistema?
@@ -391,6 +403,8 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   ---
   
 ### P2-5. Supongamos que hemos creado una Internet de conmutación de paquetes. Usando el conjunto de protocolos TCP/IP, necesitamos transferir un archivo enorme. ¿Cuál es la ventaja y la desventaja de enviar paquetes grandes?
+  
+  Cuando enviamos paquetes grandes la eficiencia es mayor que si enviamos la misma información en paquetes pequeños ya que la cantidad de los datos que se añaden al encapsular es menor. La desventaja es que en caso de perdida de un paquete o corrupción de los datos durante la transmisión, se necesita reenviar mucha más información.
   
   ---
   
@@ -403,8 +417,16 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   
 ### P2-7. Relacione los siguientes elementos con uno o más niveles del conjunto de protocolos TCP/IP:
 ### a. Crear datagramas de usuario
+  
+  Los datagramas de usuario se crean en el nivel de transporte (protocolo UDP).
+  
 ### b. Responsabilidad de manipular el envío de tramas entre nodos adyacentes
+  
+  El nivel de enlace de datos es el responsable de mover las tramas entre nodos adyacentes.
+  
 ### c. Transformar bits en señales electromagnéticas
+  
+  Este proceso ocurre en el nivel físico.
   
   ---
   
@@ -413,6 +435,9 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
  ---
   
 ### P2-9. Supongamos que una Internet privada usa tres protocolos distintos en el nivel de enlace de datos (L1, L2 y L3). Vuelva a dibujar la Figura 2.10 siguiendo esta premisa. ¿Podemos decir que en el nivel de base de datos, tenemos demultiplexación en el nodo fuente y multiplexación en el nodo del destinatario?
+  
+  
+  
   
   ---
   
