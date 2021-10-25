@@ -7,5 +7,5 @@ Por el momento, este repositorio cuenta con los siguientes materiales:
   - Fundamentos de programación:
     - Soluciones a los problemas sin resolver del libro de texto (en proceso)
 - 2° curso:
-  - Redes de computadoras:
+  - Redes de computadores:
     - Soluciones a los problemas del libro de texto (en proceso) 
