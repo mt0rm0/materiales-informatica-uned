@@ -249,7 +249,7 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
   
 ### Q2-2. ¿Qué niveles del conjunto de protocolos TCP/IP están involucrados en un conmutador de nivel de enlace?
   
-  
+  Nivel físico y nivel de enlace de datos. (p.37-38)
   
   ---
   
@@ -267,7 +267,7 @@ Un nivel (p.41)
 
 ### Q2-4. En el conjunto de protocolos TCP/IP, ¿cuáles son los objetos idénticos en el sitio del emisor y del receptor cuando pensamos en la conexión lógica en el nivel de aplicación?
 
-  
+  El mensaje.(p.38)
   
   ---
   
@@ -288,30 +288,46 @@ Un nivel (p.41)
   
 ### Q2-6. ¿Cuál de las siguientes unidades de datos está encapsulada en una trama?
 ### a. Un datagrama de usuario
+  
+  Si, pero no de manera directa. El datagrama de usuario es la unidad de datos del nivel de transporte (para protocolo UDP), este es encapsulado en un datagrama en el nivel de red, y entonces de nuevo encapsulado, esta vez en una trama, en el nivel de enlace de datos.
+  
 ### b. Un datagrama
+  
+  Si, el nivel de enlace de datos encapsula un datagrama en una trama.
+  
 ### c. Un segmento
+  
+    Si, pero no de manera directa. El segmento es la unidad de datos del nivel de transporte (para protocolo TCP), este es encapsulado en un datagrama en el nivel de red, y entonces de nuevo encapsulado, esta vez en una trama, en el nivel de enlace de datos.
 
   ---
   
 ### Q2-7. ¿Cuál de las siguientes unidades de datos se desencapsula a partir de un datagrama de usuario?
 ### a. Un datagrama
   
-  No, un datagrama es la unidad de datos del nivel de red y se desencapsula de una trama (nivel de enlace de datos).
+  No, el datagrama es la unidad de datos del nivel de red y se desencapsula de una trama (nivel de enlace de datos).
   
 ### b. Un segmento
   
-  No, un segmento es la unidad de datos del nivel de transporte cuando se usa el protocolo TCP y se desencapsula de un datagrama (nivel de red).
+  No, el segmento es la unidad de datos del nivel de transporte cuando se usa el protocolo TCP y se desencapsula de un datagrama (nivel de red).
   
 ### c. Un mensaje
 
-  Correcto, un mensaje es la unidad de datos del nivel de aplicación y se desencapsula de un datagrama de usuario (nivel de transporte con protocolo UDP). (p.41-42)
+  Correcto, el mensaje es la unidad de datos del nivel de aplicación y se desencapsula de un datagrama de usuario (nivel de transporte con protocolo UDP). (p.41-42)
   
   ---
   
 ### Q2-8. ¿Cuál de las siguientes unidades de datos tiene un mensaje del nivel de aplicación más el encabezado del nivel 4?
 ### a. Una trama
+  
+  Una trama es encapsulada en el nivel de enlace de datos (nivel 2) a partir de un datagrama, y lleva por lo tanto, además del mensaje, el encabezado de los niveles 2, 3 y 4. 
+  
 ### b. Un datagrama de usuario
+  
+  Un datagrama de usuario es encapsulado en el nivel de transporte (nivel 4) a partir de un mensaje, y lleva por lo tanto, además del mensaje, el encabezado de su nivel. 
+  
 ### c. Un bit
+  
+  Un bit es la mínima unidad de información y no trae, por definición, ni mensaje ni encabezado de ningún tipo, tan solo un valor en alta, 1, o en baja, 0.
 
   ---
   
@@ -327,6 +343,8 @@ Un nivel (p.41)
   ---
   
 ### Q2-10. Si un número de puerto es de 16 bits (2 bytes), ¿cuál es el tamaño mínimo de la cabecera en el nivel de transporte del conjunto de protocolos TCP/IP?
+  
+  Como el segmento (o datagrama de usuario) debería incluir el número de puerto de la fuente y del destinatario, la cabecera no puede ser menor de ax2 bytes, o sea 4 bytes.
 
   ---
   
@@ -345,7 +363,9 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
 
   ---
   
-### Q2-12. Cuando decimos que la capa de transporte multiplexa y demultiplexa los mensajes de la capa de aplicación, ¿queremos decir q,ue un protocolo de nivel de transporte puede combinar varios mensajes del nivel de aplicación en un paquete? Explíquelo.
+### Q2-12. Cuando decimos que la capa de transporte multiplexa y demultiplexa los mensajes de la capa de aplicación, ¿queremos decir que un protocolo de nivel de transporte puede combinar varios mensajes del nivel de aplicación en un paquete? Explíquelo.
+  
+
   
   ---
   
@@ -434,10 +454,11 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   
  ---
   
-### P2-9. Supongamos que una Internet privada usa tres protocolos distintos en el nivel de enlace de datos (L1, L2 y L3). Vuelva a dibujar la Figura 2.10 siguiendo esta premisa. ¿Podemos decir que en el nivel de base de datos, tenemos demultiplexación en el nodo fuente y multiplexación en el nodo del destinatario?
+### P2-9. Supongamos que una Internet privada usa tres protocolos distintos en el nivel de enlace de datos (L1, L2 y L3). Vuelva a dibujar la Figura 2.10 siguiendo esta premisa. ¿Podemos decir que en el nivel de enlace de datos, tenemos demultiplexación en el nodo fuente y multiplexación en el nodo del destinatario?
   
+ ![Problema 2-19](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-09.jpg)
   
-  
+  Si se entiende multiplexar como un proceso de varios (protocolos) a uno y demultiplexar como un proceso de uno a varios, se tendría demultiplexación en el nivel de enlace de datos de la fuente y multiplexatción en el nivel de enlace de datos del destino. Sin embargo, desde un punto de vista más purista, se conocen como demultiplexación inversa y multiplexación inversa.
   
   ---
   
