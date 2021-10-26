@@ -344,7 +344,7 @@ Un nivel (p.41)
   
 ### Q2-10. Si un número de puerto es de 16 bits (2 bytes), ¿cuál es el tamaño mínimo de la cabecera en el nivel de transporte del conjunto de protocolos TCP/IP?
   
-  Como el segmento (o datagrama de usuario) debería incluir el número de puerto de la fuente y del destinatario, la cabecera no puede ser menor de ax2 bytes, o sea 4 bytes.
+  Como el segmento (o datagrama de usuario) debería incluir el número de puerto de la fuente y del destinatario, la cabecera no puede ser menor de 2x2 bytes, o sea 4 bytes.
 
   ---
   
