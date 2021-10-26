@@ -458,7 +458,7 @@ No, significa que un protocolo de nivel de transporte puede encapsular paquetes 
   
 ### P2-9. Supongamos que una Internet privada usa tres protocolos distintos en el nivel de enlace de datos (L1, L2 y L3). Vuelva a dibujar la Figura 2.10 siguiendo esta premisa. ¿Podemos decir que en el nivel de enlace de datos, tenemos demultiplexación en el nodo fuente y multiplexación en el nodo del destinatario?
   
- ![Problema 2-19](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-09.jpg)
+ ![Problema 2-19](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-9.jpg)
   
   Si se entiende multiplexar como un proceso de varios (protocolos) a uno y demultiplexar como un proceso de uno a varios, se tendría demultiplexación en el nivel de enlace de datos de la fuente y multiplexatción en el nivel de enlace de datos del destino. Sin embargo, desde un punto de vista más purista, la multiplexación implica la habilidad de un protocolo para encapsular paquetes de datos del diferentes protocolos de un nivel superior. De acuerdo a esa definición, no tendriamos demultiplexación, sino lo que se conoce como **demultiplexación inversa**. Su equivalente en el nodo destino sería la **multiplexación inversa**.
   
