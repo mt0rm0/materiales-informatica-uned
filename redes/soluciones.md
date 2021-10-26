@@ -297,7 +297,7 @@ Un nivel (p.41)
   
 ### c. Un segmento
   
-    Si, pero no de manera directa. El segmento es la unidad de datos del nivel de transporte (para protocolo TCP), este es encapsulado en un datagrama en el nivel de red, y entonces de nuevo encapsulado, esta vez en una trama, en el nivel de enlace de datos.
+  Si, pero no de manera directa. El segmento es la unidad de datos del nivel de transporte (para protocolo TCP), este es encapsulado en un datagrama en el nivel de red, y entonces de nuevo encapsulado, esta vez en una trama, en el nivel de enlace de datos.
 
   ---
   
@@ -365,7 +365,7 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   
 ### Q2-12. Cuando decimos que la capa de transporte multiplexa y demultiplexa los mensajes de la capa de aplicación, ¿queremos decir que un protocolo de nivel de transporte puede combinar varios mensajes del nivel de aplicación en un paquete? Explíquelo.
   
-
+No, significa que un protocolo de nivel de transporte puede encapsular paquetes de diferentes protocolos de nivel de aplicación. Para ello se añade un campo en la cabecera que identificael protocolo al que pertenece el paquete encapsulado.
   
   ---
   
@@ -376,6 +376,8 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   ---
   
 ### Q2-14. Supongamos que queremos conectar dos hosts aislados para que cada uno se comunique con el otro. ¿Necesitamos un conmutador de enlace entre ambos? Desarrollar.
+  
+  
   
   ---
   
@@ -458,7 +460,7 @@ En el nivel de aplicación se usan normalmente **nombres** para definir el nombr
   
  ![Problema 2-19](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-09.jpg)
   
-  Si se entiende multiplexar como un proceso de varios (protocolos) a uno y demultiplexar como un proceso de uno a varios, se tendría demultiplexación en el nivel de enlace de datos de la fuente y multiplexatción en el nivel de enlace de datos del destino. Sin embargo, desde un punto de vista más purista, se conocen como demultiplexación inversa y multiplexación inversa.
+  Si se entiende multiplexar como un proceso de varios (protocolos) a uno y demultiplexar como un proceso de uno a varios, se tendría demultiplexación en el nivel de enlace de datos de la fuente y multiplexatción en el nivel de enlace de datos del destino. Sin embargo, desde un punto de vista más purista, la multiplexación implica la habilidad de un protocolo para encapsular paquetes de datos del diferentes protocolos de un nivel superior. De acuerdo a esa definición, no tendriamos demultiplexación, sino lo que se conoce como **demultiplexación inversa**. Su equivalente en el nodo destino sería la **multiplexación inversa**.
   
   ---
   
