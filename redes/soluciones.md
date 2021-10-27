@@ -1,21 +1,14 @@
-
-
 # Soluciones a los problemas del libro de texto
+# Módulo 1: Introducción a las redes y comunicaciones
 
-## Índice
 
-1. [Tema 1](#tema-1)
-2. [Tema 2](#tema-2)
-3. [Tema 3](#tema-3)
-4. [Tema 4](#tema-4)
-5. [Tema 5](#tema-5)
-6. [Tema 6](#tema-6)
-7. [Tema 7](#tema-7)
-8. [Tema 8](#tema-8)
-9. [Tema 9](#tema-9)
-10. [Tema 10](#tema-10)
+## Índice <a name="indice"></a>
 
-## Tema 1
+1. [Tema 1. Introducción](#tema1)
+2. [Tema 2. Modelos de redes](#tema2)
+
+
+## Tema 1. Introducción <a name="tema1"></a>
 <details>
 <summary>Cuestiones</summary>
 <br>
@@ -234,9 +227,9 @@ En una topología de bus, ninguna estación está en el camino de la señal, por
  
 </details>
 
-[Volver al índice](#índice)
+[Volver al índice](#indice)
 
-## Tema 2
+## Tema 2. Modelos de redes <a name="tema2"></a>
 <details>
 <summary>Cuestiones</summary>
 <br>
@@ -344,7 +337,7 @@ Un nivel (p.41)
   
 ### Q2-10. Si un número de puerto es de 16 bits (2 bytes), ¿cuál es el tamaño mínimo de la cabecera en el nivel de transporte del conjunto de protocolos TCP/IP?
   
-  Como el segmento (o datagrama de usuario) debería incluir el número de puerto de la fuente y del destinatario, la cabecera no puede ser menor de 2x2 bytes, o sea 4 bytes.
+  Como el segmento (o datagrama de usuario) debería incluir el número de puerto de la fuente y del destinatario, la cabecera no puede ser menor de 2x2 bytes, o sea 4 bytes = 32 bits.
 
   ---
   
@@ -377,7 +370,7 @@ No, significa que un protocolo de nivel de transporte puede encapsular paquetes 
   
 ### Q2-14. Supongamos que queremos conectar dos hosts aislados para que cada uno se comunique con el otro. ¿Necesitamos un conmutador de enlace entre ambos? Desarrollar.
   
-  
+  No, no es necesario. Un conmutador (switch) de nivel de enlace se utiliza normalmente para enlazar de manera eficiente hosts en la misma red. Si los hosts que queremos conectar se encuentran dentro de una distancia relativamente pequeña se pueden conectar punto a punto, y el conmutador no es necesario (solo si además a esa red queremos conectar algunos perifericos, como una impresora, por ejemplo). Si están muy alejados, habría que conectarlos con un intermediario, pero en este caso se trataría de un enrutador.
   
   ---
   
@@ -405,7 +398,12 @@ No, significa que un protocolo de nivel de transporte puede encapsular paquetes 
   
 ### P2-2. Responda a las siguientes preguntas sobre la Figura 2.2 cuando la comunicación es de María a Ana:
 ### a. ¿Cuál es el servicio proporcionado por el nivel 2 al nivel 3 en el sitio de María?
+  
+  El nivel 2 coge el texto simple del nivel 3, lo cifra (lo encapsula) y lo pasa al nivel 1.
+  
 ### b. ¿Cuál es el servicio proporcionado por el nivel 2 al nivel 3 en el sitio de Ana?
+  
+  El nivel 2 coge el texto cifrado del nivel 1, lo descifra (lo desencapsula) y lo pasa al nivel 3.
   
   ---
   
@@ -422,6 +420,8 @@ No, significa que un protocolo de nivel de transporte puede encapsular paquetes 
   
 ### P2-4. Supongamos que un sistema utiliza cinco niveles de protocolo. Si el programa de aplicación crea un mensaje de 100 bytes y cada capa (incluyendo la quinta y la primera) añade un encabezado de 10 bytes a la unidad de datos, ¿cuál es la eficiencia (la relación entre los bytes de la capa de aplicación y el número de bytes transmitidos) del sistema?
   
+  Como cada una de las cinco capas añade 10 bytes, el número de bytes transmitidos es de 150 bytes. Esto nos da una eficiencia de 100/150 = 2/3 &#8776; 66.67%   
+  
   ---
   
 ### P2-5. Supongamos que hemos creado una Internet de conmutación de paquetes. Usando el conjunto de protocolos TCP/IP, necesitamos transferir un archivo enorme. ¿Cuál es la ventaja y la desventaja de enviar paquetes grandes?
@@ -432,8 +432,16 @@ No, significa que un protocolo de nivel de transporte puede encapsular paquetes 
   
 ### P2-6. Relacione los siguientes elementos con uno o más niveles del conjunto de protocolos TCP/IP:
 ### a. Determinación de ruta
+  
+  Nivel de red y de enlace de datos
+  
 ### b. Conexión a los medios de transmisión
+
+  Nivel físico
+  
 ### c. Proporcionar servicios al usuario final
+
+  Nivel de aplicación
   
   ---
   
@@ -454,11 +462,13 @@ No, significa que un protocolo de nivel de transporte puede encapsular paquetes 
   
 ### P2-8. En la Figura 2.10, cuando el protocolo IP desencapsula el paquete del nivel de transporte, ¿cómo sabe a qué protocolo de nivel superior ha de entregarse (UDP o TCP)?
   
+  Al multiplexar en origen, el nivel de red añade a la cabecera un campo para identificar el protocolo al que pertenece el paquete. Al demultiplexar en destino, el protocolo lee el campo con la información de protocolo y entrega el paquete a quien corresponde.
+  
  ---
   
 ### P2-9. Supongamos que una Internet privada usa tres protocolos distintos en el nivel de enlace de datos (L1, L2 y L3). Vuelva a dibujar la Figura 2.10 siguiendo esta premisa. ¿Podemos decir que en el nivel de enlace de datos, tenemos demultiplexación en el nodo fuente y multiplexación en el nodo del destinatario?
   
- ![Problema 2-19](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-9.jpg)
+ ![Problema 2-9](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-9.jpg)
   
   Si se entiende multiplexar como un proceso de varios (protocolos) a uno y demultiplexar como un proceso de uno a varios, se tendría demultiplexación en el nivel de enlace de datos de la fuente y multiplexatción en el nivel de enlace de datos del destino. Sin embargo, desde un punto de vista más purista, la multiplexación implica la habilidad de un protocolo para encapsular paquetes de datos del diferentes protocolos de un nivel superior. De acuerdo a esa definición, no tendriamos demultiplexación, sino lo que se conoce como **demultiplexación inversa**. Su equivalente en el nodo destino sería la **multiplexación inversa**.
   
@@ -466,26 +476,40 @@ No, significa que un protocolo de nivel de transporte puede encapsular paquetes 
   
 ### P2-10. Supongamos que una Internet privada requiere que los mensajes del nivel de aplicación estén cifrados y descifrados por motivos de seguridad. Si necesitamos añadir alguna información sobre el proceso de cifrado/descifrado (como los algoritmos usados en el proceso), ¿significa que estamos añadiendo un nivel al conjunto de protocolos TCP/IP? Rediseñe las capas TCP/IP (Figura 2.4 parte b) si lo cree así.
   
+  No, no estamos añadiendo ningúnnivel extra. Simplemente el nivel de transporte asume otro función más y contiene ahora también el proceso de encriptado/desencriptado. 
+  
   ---
   
 ### P2-11. La arquitectura modular de protocolos se puede encontrar en muchos aspectos de nuestras vidas, como en los viajes aéreos. Imagine que hace un viaje de ida y vuelta para pasar un tiempo de vacaciones en un complejo turístico. Tiene que pasar por algunos procesos en el aeropuerto de su ciudad antes de volar. También hay que pasar por algunos procesos al llegar al aeropuerto del destino. Muestra los niveles de protocolo para el viaje de ida y vuelta utilizando algunos niveles como la facturación y recogida de equipajes, embarque y desembarque, despegue y aterrizaje.
+  
+  ![Problema 2-11](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-11.jpg)
   
   ---
   
 ### P2-12. La presentación de datos es cada vez más importante en la Internet de hoy en día. Algunas personas sostienen que el conjunto de protocolos TCP/IP necesita añadir un nuevo nivel para ocuparse de la presentación de los datos. Si se añade este nuevo nivel en el futuro, ¿dónde debería estar su posición en el conjunto? Redibuje la Figura 2.4 para incluir dicho nivel.
   
+  Se encontraría entre el nivel de aplicación y el nivel de transporte, en el mismo lugar que ocupa en el Modelo OSI.
+  
+  ![Problema 2-12](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-12.jpg)
+  
   ---
   
 ### P2-13. En una Internet, cambiamos la tecnología LAN a una nueva. ¿Qué niveles del conjunto de protocolos TCP/IP deben cambiarse?
+  
+  Los únicos dos niveles que han de cambiarse son el de enlace de datos y el físico. El nuevo hardware y software necesita ser instalado en todos los hosts, enrutadores y conmutadores de nivel de enlace. Mientras el nuevo nivel de enlace puede encapsular y desencapsular datagramas del nivel de red, no hay necesidad de cambiar el protocolo de los tres niveles superiores. Esta es una de las características de la arquitectura por niveles.
   
   ---
   
 ### P2-l4. Supongamos que se ha escrito un protocolo de nivel de aplicación para utilizar los servicios de UDP. ¿Puede el protocolo de nivel de aplicación utilizar los servicios de TCP sin cambios?
   
+  No, si un protocolo de nivel de aplicación ha sido escrito para usar el protocolo UDP, no será capaz de usar servicios de TCP, ya que son protocolos diferentes que funcionan de manera diferente y no proveen los mismos servicios. Aún si resultara que la aplicación solo usa servicios que también están incluidos en TCP, el protocolo debería ser reescrito para poder usar con TCP.
+  
   ---
   
 ### P2-15. Usando la Internet en la Figura 1.11 (Capítulo 1), muestre los niveles del conjunto de protocolos TCP/IP y el flujo de datos cuando dos hosts, uno en la costa oeste y el otro en la costa este, intercambian mensajes.
+  
+  ![Problema 2-15](https://github.com/mt0rm0/materiales-informatica-uned/blob/main/redes/P2-15.jpg)
    
 </details>
 
-[Volver al índice](#índice)
+[Volver al índice](#indice)
